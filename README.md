@@ -27,13 +27,16 @@ Following the **2026 FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power 
 ---
 
 ## 📁 Repo Structure
-├── sql/
-├── excel/
-├── python/
-├── power-bi/
-├── aws/
-├── projects/
-└── notes/ ← daily notes, one file per day
+
+```
+sql/
+excel/
+python/
+power-bi/
+aws/
+projects/
+notes/          ← daily notes, one file per day
+```
 
 ---
 
