@@ -9,10 +9,10 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 
 ## 📅 Daily Log
 
-| Day | Date   | Topic  | What I did                                          | Notes                   |
-| --- | ------ | ------ | --------------------------------------------------- | ----------------------- |
-| 1   | Aug 25 | GitHub | Set up repo, learned repo structure & README basics | [notes](notes/Day 1.md) |
-| 2   | Aug 26 | GitHub | Learn about kinds of data                           | [notes](notes/Day 2.md) |
+| Day | Date   | Topic  | What I did                                          | Notes                     |
+| --- | ------ | ------ | --------------------------------------------------- | ------------------------- |
+| 1   | Aug 25 | GitHub | Set up repo, learned repo structure & README basics | [notes](notes/Day%201.md) |
+| 2   | Aug 26 | GitHub | Learn about kinds of data                           | [notes](notes/Day$202.md) |
 
 ---
 
