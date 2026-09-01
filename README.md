@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 2 days
+🔥 **Current streak:** 3 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -17,6 +17,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 4   | Aug 28 | GitHub | Data Types, File Types, and Data Collection         | [notes](notes/Day%204.md) |
 | 5   | Aug 31 | GitHub | Data Cleaning                                       | [notes](notes/Day%205.md) |
 | 6   | Sep 1  | GitHub | MySQL Installation                                  | [notes](notes/Day%206.md) |
+| 7   | Sep 2  | GitHub | SELECT and DISTINCT                                 | [notes](notes/Day%207.md) |
 
 ---
 
