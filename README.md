@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 8 days
+🔥 **Current streak:** 9 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -23,6 +23,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 10  | Sep 5  | GitHub | ORDER BY                                            | [notes](notes/Day%2010.md) |
 | 11  | Sep 6  | GitHub | HAVING vs WHERE                                     | [notes](notes/Day%2011.md) |
 | 12  | Sep 7  | GitHub | LIMIT and ALIASING                                  | [notes](notes/Day%2012.md) |
+| 12  | Sep 8  | GitHub | INNER JOIN                                          | [notes](notes/Day%2013.md) |
 
 ---
 
