@@ -12,7 +12,7 @@ FROM employee_demographics dem
 INNER JOIN employee_salary sal
 	ON dem.employee_id = sal.employee_id;
     
-# INNER
+# OUTER
 SELECT dem.employee_id, age, occupation
 FROM employee_demographics dem
 INNER JOIN employee_salary sal
