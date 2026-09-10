@@ -14,11 +14,20 @@ OUTER and SELF JOINS
 
 ## Key takeaway
 
-- OUTER LEFT and RIGHT JOINS
-    - OUTER LEFT takes everything from the left table and returns the matches from the right table.
-    - RIGHT JOINS takes everything from the right table and returns the matches from the left table. If there is no match from the left table, return null.
-- SELF JOIN
-    - Joining a table by itself.
+- JOINS have 3 types:
+    - INNER, OUTER, and SELF Joins
+    - INNER JOIN is the same as using only JOIN
+        - Returns rows that have a match in both tables.
+        - Unmatched rows are excluded.
+    - OUTER JOIN has 2 types: LEFT JOIN and RIGHT JOIN
+        - LEFT JOIN
+            - Returns ALL rows from the left table + matching rows from the right table.
+            - Unmatched rows from the right table display as NULL.
+        - RIGHT JOIN
+            - Returns ALL rows from the right table + matching rows from the left table.
+            - Unmatched rows from the left table display as NULL.
+    - SELF JOIN
+        - Joins a table by itself.
 
 ## Tomorrow
 
