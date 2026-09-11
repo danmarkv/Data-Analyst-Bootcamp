@@ -34,7 +34,7 @@ UNIONS and CASE STATEMENTS
             - cess
         - SUBSTRING(first_name, 3, 4)
             - ince
-- REPLACE - needs 2 parameters
+- REPLACE - needs 3 parameters
     - Replaces a character with a different character you want.
     - ex. first_name = 'Princess'
         - REPLACE(first_name, 'P', 'F')
@@ -50,3 +50,5 @@ UNIONS and CASE STATEMENTS
 - UNIONS must have the same number of columns in order to work properly. Otherwise, an error will occur.
 
 ## Tomorrow
+
+CASE STATEMENTS

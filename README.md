@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 11 days
+🔥 **Current streak:** 12 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -26,6 +26,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 13  | Sep 8  | SQL            | INNER JOIN                                          | [notes](notes/Day%2013.md) |
 | 14  | Sep 9  | SQL            | OUTER and SELF JOIN                                 | [notes](notes/Day%2014.md) |
 | 15  | Sep 10 | SQL            | UNIONS and STRING FUNCTIONS                         | [notes](notes/Day%2015.md) |
+| 16  | Sep 11 | SQL            | CASE STATEMENTS                         | [notes](notes/Day%2016.md) |
 
 ---
 
