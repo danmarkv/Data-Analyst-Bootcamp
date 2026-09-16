@@ -51,12 +51,13 @@ CALL large_salaries(); -- NOT BEST PRACTICE
 
 # PARAMETERS
 DELIMITER $$ 
-CREATE PROCEDURE large_salaries4()
+CREATE PROCEDURE large_salaries4(p_employee_id INT)
 BEGIN
-	SELECT *
+	SELECT salary
 	FROM employee_salary
-	WHERE salary >= 50000;
+    WHERE employee_id = p_employee_id
+    ;
 END $$
 DELIMITER ; 
 
-CALL large_salaries4();
+CALL large_salaries4(1);

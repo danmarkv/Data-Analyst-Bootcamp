@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 14 days
+🔥 **Current streak:** 17 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -30,7 +30,8 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 17  | Sep 12 | SQL            | SUBQUERIES                                          | [notes](notes/Day%2017.md) |
 | 18  | Sep 13 | SQL            | WINDOW FUNCTIONS                                    | [notes](notes/Day%2018.md) |
 | 19  | Sep 14 | SQL            | COMMON TABLE EXPRESSIONS                            | [notes](notes/Day%2019.md) |
-| 20  | Sep 15 | SQL            | TEMPORARY TABLES                                    | [notes](notes/Day%2019.md) |
+| 20  | Sep 15 | SQL            | TEMPORARY TABLES and STORED PROCEDURES              | [notes](notes/Day%2019.md) |
+| 21  | Sep 16 | SQL            | TRIGGERS and EVENTS                                 | [notes](notes/Day%2019.md) |
 
 ---
 
