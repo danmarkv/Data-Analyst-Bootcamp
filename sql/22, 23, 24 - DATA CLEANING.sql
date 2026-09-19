@@ -117,3 +117,71 @@ WHERE row_num > 1;
 -- 14 check if they're deleted
 SELECT *
 FROM layoffs_staging2;
+
+# Standardizing Data
+
+-- 15 trim data to remove white spaces before and after the company names
+SELECT DISTINCT(TRIM(company))
+FROM layoffs_staging2;
+
+-- 16 compare company with no trim and trimmed
+SELECT company, TRIM(company)
+FROM layoffs_staging2;
+
+-- 17 replace the trimmed company to the no trim one
+UPDATE layoffs_staging2
+SET company = TRIM(company);
+
+-- 18 check if it worked, then check industry, then order it alphabetically
+-- 21 check industry again
+SELECT DISTINCT(industry)
+FROM layoffs_staging2
+ORDER BY 1;
+
+-- 19 industry has the same Crypto values
+SELECT *
+FROM layoffs_staging2
+WHERE industry LIKE 'Crypto%';
+
+-- 20 update Crpyto-like values to Crypto
+UPDATE layoffs_staging2
+SET industry = 'Crypto'
+WHERE industry LIKE 'Crypto%';
+
+-- 22 company and industry looks good. now look at location
+-- 23 and look at country
+# SELECT DISTINCT location
+SELECT DISTINCT country
+FROM layoffs_staging2
+ORDER BY 1;
+
+-- 24 United States has the another column with 'United States.'
+SELECT *
+FROM layoffs_staging2
+WHERE country LIKE 'United States%';
+
+-- 25 trim the United States. column
+SELECT DISTINCT country, TRIM(TRAILING '.' FROM country)
+FROM layoffs_staging2
+ORDER BY 1;
+
+-- 26 change United States. to United States
+UPDATE layoffs_staging2
+SET country = TRIM(TRAILING '.' FROM country)
+WHERE country LIKE 'United States%';
+
+-- 27 date column is in text data type
+SELECT `date`
+FROM layoffs_staging2
+ORDER BY 1;
+
+-- 28 update `date` column to date format
+UPDATE layoffs_staging2
+SET `date` = str_to_date(`date`, '%m/%d/%Y');
+
+-- 29 change the data type of `date` column to date
+ALTER TABLE layoffs_staging2
+MODIFY COLUMN `date` DATE;
+
+SELECT *
+FROM layoffs_staging2;

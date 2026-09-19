@@ -32,8 +32,9 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 19  | Sep 14 | SQL            | COMMON TABLE EXPRESSIONS                            | [notes](notes/Day%2019.md) |
 | 20  | Sep 15 | SQL            | TEMPORARY TABLES and STORED PROCEDURES              | [notes](notes/Day%2020.md) |
 | 21  | Sep 16 | SQL            | TRIGGERS and EVENTS                                 | [notes](notes/Day%2021.md) |
-| 22  | Sep 17 | SQL            | Data Cleaning                                       | [notes](notes/Day%2022.md) |
-| 23  | Sep 18 | SQL            | Removing Duplicates                                 | [notes](notes/Day%2023.md) |
+| 22  | Sep 17 | Data Cleaning  | Data Cleaning                                       | [notes](notes/Day%2022.md) |
+| 23  | Sep 18 | Data Cleaning  | Removing Duplicates                                 | [notes](notes/Day%2023.md) |
+| 24  | Sep 19 | Data Cleaning  | Standardizing Data                                  | [notes](notes/Day%2024.md) |
 
 ---
 
