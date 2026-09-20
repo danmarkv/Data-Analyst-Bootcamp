@@ -16,3 +16,5 @@ Standardizing Data
 ## Key takeaway
 
 ## Tomorrow
+
+Working with Null and Blank Values

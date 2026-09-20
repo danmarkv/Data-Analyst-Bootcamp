@@ -9,6 +9,10 @@ FROM layoffs;
 --   3. Null values or blank values
 --   4. Remove any irrelevant columns
 
+
+
+# 1 Remove Duplicates
+
 -- 1 create a table with columns like the raw data source
 CREATE TABLE layoffs_staging
 LIKE layoffs;
@@ -118,6 +122,8 @@ WHERE row_num > 1;
 SELECT *
 FROM layoffs_staging2;
 
+
+
 # Standardizing Data
 
 -- 15 trim data to remove white spaces before and after the company names
@@ -183,5 +189,83 @@ SET `date` = str_to_date(`date`, '%m/%d/%Y');
 ALTER TABLE layoffs_staging2
 MODIFY COLUMN `date` DATE;
 
+-- 30 verify if table is good
 SELECT *
 FROM layoffs_staging2;
+
+
+
+# Working with Null and Blank Values
+
+-- 31 filter the null values from total_laid_off and percentage_laid_off
+SELECT *
+FROM layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+-- 32 filter industry for null or blank values
+SELECT *
+FROM layoffs_staging2
+WHERE industry IS NULL
+OR industry = '';
+
+-- 33 check the company of the null/blank industry if the other values have an industry to them
+SELECT *
+FROM layoffs_staging2
+WHERE company = 'Airbnb';
+
+-- 34 use JOIN to check industries with same company and locaton but one has industry and the other has null/blank values
+SELECT t1.industry, t2.industry
+FROM layoffs_staging2 t1
+JOIN layoffs_staging2 t2
+	ON t1.company = t2.company
+    AND t1.location = t2.location
+WHERE (t1.industry IS NULL OR t1.industry = '')
+AND t2.industry IS NOT NULL;
+
+-- 35 update the blank industry value with ones that have a value
+-- 37 redo the query but remove the t1.industry = '' because it's changed to null
+UPDATE layoffs_staging2 t1
+JOIN layoffs_staging2 t2
+	ON t1.company = t2.company
+SET t1.industry = t2.industry
+WHERE t1.industry IS NULL
+AND t2.industry IS NOT NUll;
+
+-- 36 step 35 didn't work, new plan is set blank values to null and then do step 35
+UPDATE layoffs_staging2
+SET industry = NULL
+WHERE industry = '';
+
+-- 38 check again for null or blank values. Bally's is still null
+SELECT *
+FROM layoffs_staging2
+WHERE industry IS NULL
+OR industry = '';
+
+-- 39 check if Bally's has a same company with not null or blank values. ANSWER: it doesn't
+SELECT *
+FROM layoffs_staging2
+WHERE company LIKE 'Bally%';
+
+-- 40 go back to dealing with total_laid_off and percentage_laid_off
+SELECT *
+FROM layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+-- 41 delete rows with null or blank total_laid_off and percentage_laid_off because data is unusable. should you delete these rows? not sure but data is unusable
+DELETE
+FROM layoffs_staging2
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+
+-- 42 check table again
+SELECT *
+FROM layoffs_staging2;
+
+-- 43 remove row_num column
+
+
+
+
