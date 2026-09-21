@@ -265,6 +265,8 @@ SELECT *
 FROM layoffs_staging2;
 
 -- 43 remove row_num column
+ALTER TABLE layoffs_staging2
+DROP COLUMN row_num;
 
 
 
