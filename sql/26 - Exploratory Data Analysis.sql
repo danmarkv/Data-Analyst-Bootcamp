@@ -55,7 +55,7 @@ WHERE SUBSTRING(`date`, 1, 7) IS NOT NULL
 GROUP BY `MONTH`
 ORDER BY 1 ASC;
 
--- 11 creat rolling total per month
+-- 11 create rolling total per month to see which month and year the most lay offs were
 WITH rolling_total as
 (
 SELECT SUBSTRING(`date`, 1, 7) `MONTH`, SUM(total_laid_off) AS total_laid_off_monthly
@@ -64,5 +64,42 @@ WHERE SUBSTRING(`date`, 1, 7) IS NOT NULL
 GROUP BY `MONTH`
 ORDER BY 1 ASC
 )
-SELECT `MONTH`, total_laid_off_monthly, SUM(total_laid_off_monthly) OVER(ORDER BY `MONTH`) as rolling_totals
+SELECT `MONTH`, total_laid_off_monthly, SUM(total_laid_off_monthly) OVER(ORDER BY `MONTH`) as rolling_total
 FROM rolling_total;
+
+-- 12 check the company total_laid_off per year
+SELECT company, YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company, `date`
+ORDER BY 3 DESC;
+
+-- 13 rank the total_laid_off per year
+WITH Company_Year (company, years, total_laid_off) AS
+(
+SELECT company, YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company, YEAR(`date`)
+)
+SELECT *, 
+DENSE_RANK() OVER (PARTITION BY years ORDER BY total_laid_off DESC) AS ranking
+FROM Company_Year
+WHERE years IS NOT NULL
+ORDER BY ranking ASC;
+
+-- 14 filter to show only the top 5
+WITH Company_Year (company, years, total_laid_off) AS
+(
+SELECT company, YEAR(`date`), SUM(total_laid_off)
+FROM layoffs_staging2
+GROUP BY company, YEAR(`date`)
+), Company_Year_Ranking AS
+(
+SELECT *, 
+DENSE_RANK() OVER (PARTITION BY years ORDER BY total_laid_off DESC) AS ranking
+FROM Company_Year
+WHERE years IS NOT NULL
+)
+SELECT * 
+FROM Company_Year_Ranking
+WHERE ranking <= 5
+;

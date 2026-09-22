@@ -12,3 +12,5 @@ Exploratory Data Analysis
 ## Key takeaway
 
 ## Tomorrow
+
+Excel Tutorial Series
