@@ -1,0 +1,36 @@
+# Day 23 — [Sep 28, 2027]
+
+## Topic
+
+Excel Formulas
+
+## What I did
+
+- MAX/MIN - find highest/lowest number/value in a date range.
+    - =MAX(cell1, cell2)
+    - =MIN(cell1, cell2)
+- IF/IFS - IF is a condition, IFS is multiple conditions.
+    - =IF(condition, if_condition_true, if_condition_false)
+    - IFS(condition1, if_condition1_true, condition2, if_condition2_true, condition3, if_condition3_true...)
+        - It doesn't have an "If false" value. It defaults to #N/A if no condition is set to that value.
+- LEN - returns the number of characters in a text string. It counts spaces also.
+    - =LEN(cell/cell_range)
+- LEFT/RIGHT - choose a certain part of a text string and extract the text from it. Like using SUBSTRING.
+    - LEFT(cell, number_of_characters_to_extract)
+    - RIGHT(cell, number_of_characters_to_extract)
+        - Very usable when dealing with extracting data from dates.
+        - Data must be in text type, it doesn't work when data is in date type.
+- DateToText - convert a value to text in a specific number format.
+    - = TEXT(cell, "dd/mm/yyyy")
+        - Convert date type cell into text type.
+- TRIM - removes unwanted spaces from cells expect for single spaces. ex. Dan Mark
+    - TRIM(cell)
+- CONCATENATE - joins two or more strings into one string.
+    - CONCATENATE(cell_first_name, " ", cell_last_name)
+    - CONCAT() vs CONCATENATE()
+        - CONCAT accepts cell ranges in the parameters.
+        - CONCATENATE does not.
+
+## Key takeaway
+
+## Tomorrow

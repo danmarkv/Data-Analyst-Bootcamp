@@ -38,6 +38,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 25  | Sep 20 | Data Cleaning  | Working with Null and Blank Values                  | [notes](notes/Day%2025.md) |
 | 26  | Sep 21 | Data Cleaning  | Exploratory Data Analysis                           | [notes](notes/Day%2026.md) |
 | 27  | Sep 22 | Excel          | Introduction to Pivot Tables                        | [notes](notes/Day%2027.md) |
+| 28  | Sep 23 | Excel          | Excel Formulas                                      | [notes](notes/Day%2028.md) |
 
 ---
 
