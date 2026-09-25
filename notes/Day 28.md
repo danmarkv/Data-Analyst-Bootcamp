@@ -30,6 +30,27 @@ Excel Formulas
     - CONCAT() vs CONCATENATE()
         - CONCAT accepts cell ranges in the parameters.
         - CONCATENATE does not.
+- SUBSITUTE - replace an old string with new string in a text string.
+    - SUBSTITUTE(cell, old_text, new_text, instance_num)
+    - instance_num - is the instance to replace. Blank is replacing all instances of the old text with the new text.
+    - instance_num = 1 ("/" -> "-")
+        - 3/23/1997 -> 3-23/1997
+    - instance_num = 2 ("/" -> "-")
+        - 3/23/1997 -> 3/23-1997
+- SUM/SUMIF/SUMIFS - SUM adds up all the numbers in a range, SUMIF adds up all the numbers in a range if it meets a certain criteria. SUMIFS is just SUMIF with mutilple criteria/conditions.
+    - SUM(cell_range, cell_range2,...)
+    - SUMIF(cell_range, criteria)
+        - SUMIF(A1:A5, ">50000")
+            - sums all the numbers in the range if their value is greater than 50000
+    - SUMIFS(cell_range, criteria_range1, criteria1, criteria_range2, criteria2, ...)
+        - A - salary, B - gender, C - age
+        - SUMIFS(A1:A5, B2:B5, "Male", C1:C5, ">30")
+            - sums all the salary in the range if their gender is Male and their age is greater than 30.
+- COUNT/COUNTIF/COUNTIFS - COUNTIF counts all the numbers in a range that contain numbers. COUNTIF counts all the numbers in a range if they meet the condition. COUNTIFS counts all the numbers in a range if they meet a set of conditions.
+    - COUNT(cell_range1, cell_range2)
+    - COUNTIF(cell_range, criteria)
+    - COUNTIFS(cell_range1, criteria1, cell_range2, criteria2, ...)
+- DAYS/NETWORKDAYS - DAYS count the number of days between two dates. NETWORKDAYS returns the number of whole workdays between two dates.
 
 ## Key takeaway
 
