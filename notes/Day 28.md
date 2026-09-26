@@ -31,7 +31,7 @@ Excel Formulas
         - CONCAT accepts cell ranges in the parameters.
         - CONCATENATE does not.
 - SUBSITUTE - replace an old string with new string in a text string.
-    - SUBSTITUTE(cell, old_text, new_text, instance_num)
+    - SUBSTITUTE(cell, old_text, new_text, instance_num?)
     - instance_num - is the instance to replace. Blank is replacing all instances of the old text with the new text.
     - instance_num = 1 ("/" -> "-")
         - 3/23/1997 -> 3-23/1997
@@ -46,12 +46,18 @@ Excel Formulas
         - A - salary, B - gender, C - age
         - SUMIFS(A1:A5, B2:B5, "Male", C1:C5, ">30")
             - sums all the salary in the range if their gender is Male and their age is greater than 30.
-- COUNT/COUNTIF/COUNTIFS - COUNTIF counts all the numbers in a range that contain numbers. COUNTIF counts all the numbers in a range if they meet the condition. COUNTIFS counts all the numbers in a range if they meet a set of conditions.
+- COUNT/COUNTIF/COUNTIFS - COUNT counts all the numbers in a range that contain numbers. COUNTIF counts all the numbers in a range if they meet the condition. COUNTIFS counts all the numbers in a range if they meet a set of conditions.
     - COUNT(cell_range1, cell_range2)
     - COUNTIF(cell_range, criteria)
     - COUNTIFS(cell_range1, criteria1, cell_range2, criteria2, ...)
 - DAYS/NETWORKDAYS - DAYS count the number of days between two dates. NETWORKDAYS returns the number of whole workdays between two dates.
+    - DAYS(end_date, start_date)
+    - NETWORKDAYS(start_date, end_date, holidays?)
 
 ## Key takeaway
 
+There are lots of formulas but these are the most commonly used in actual jobs.
+
 ## Tomorrow
+
+XLOOKUP
