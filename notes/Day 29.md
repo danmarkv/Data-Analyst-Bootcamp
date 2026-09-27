@@ -37,3 +37,5 @@ XLOOKUP
 ## Key takeaway
 
 ## Tomorrow
+
+Conditional Formatting
