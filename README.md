@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 3 days
+🔥 **Current streak:** 4 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -39,8 +39,9 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 26  | Sep 21 | Data Cleaning  | Exploratory Data Analysis                           | [notes](notes/Day%2026.md) |
 | 27  | Sep 22 | Excel          | Introduction to Pivot Tables                        | [notes](notes/Day%2027.md) |
 | 28  | Sep 25 | Excel          | Excel Formulas                                      | [notes](notes/Day%2028.md) |
-| 29  | Sep 26 | Excel          | XLOOKUP                                             | [notes](notes/Day%2028.md) |
-| 30  | Sep 27 | Excel          | Conditional Formatting                              | [notes](notes/Day%2028.md) |
+| 29  | Sep 26 | Excel          | XLOOKUP                                             | [notes](notes/Day%2029.md) |
+| 30  | Sep 27 | Excel          | Conditional Formatting                              | [notes](notes/Day%2030.md) |
+| 31  | Sep 28 | Excel          | Charts                                              | [notes](notes/Day%2031.md) |
 
 ---
 

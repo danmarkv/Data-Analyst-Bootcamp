@@ -14,7 +14,11 @@ Conditional Formatting
 - Highlight Cells Rules - it's used the most.
     - Duplicate Values - highlights duplicate/unique values depending on your preference.
     - Text that Contains - highlights cells that contain a certain string/character.
+- More Rules
+    - Highlight the cells you want to add rules to first, then remove the dollar symbols so that your range isn't static, then add your rule.
 
 ## Key takeaway
 
 ## Tomorrow
+
+Charts
