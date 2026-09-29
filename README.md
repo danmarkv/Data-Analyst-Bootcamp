@@ -42,6 +42,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 29  | Sep 26 | Excel          | XLOOKUP                                             | [notes](notes/Day%2029.md) |
 | 30  | Sep 27 | Excel          | Conditional Formatting                              | [notes](notes/Day%2030.md) |
 | 31  | Sep 28 | Excel          | Charts                                              | [notes](notes/Day%2031.md) |
+| 32  | Sep 29 | Excel          | Cleaning Data in Excel                              | [notes](notes/Day%2032.md) |
 
 ---
 
