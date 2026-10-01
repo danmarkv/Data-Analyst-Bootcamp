@@ -2,7 +2,7 @@
 
 Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, GitHub, AWS.
 
-🔥 **Current streak:** 6 days
+🔥 **Current streak:** 8 days
 📅 **Started:** Aug 25, 2026
 
 ---
@@ -44,7 +44,8 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 31  | Sep 28 | Excel          | Charts                                              | [notes](notes/Day%2031.md) |
 | 32  | Sep 29 | Excel          | Cleaning Data in Excel                              | [notes](notes/Day%2032.md) |
 | 33  | Sep 30 | Excel          | Excel Project                                       | [notes](notes/Day%2033.md) |
-| 34  | Oct 1  | Tableau        | Installing Tableau                                  | [notes](notes/Day%2033.md) |
+| 34  | Oct 1  | Tableau        | Installing Tableau                                  | [notes](notes/Day%2034.md) |
+| 35  | Oct 2  | Tableau        | Bins and Calculated Fields                          | [notes](notes/Day%2035.md) |
 
 ---
 

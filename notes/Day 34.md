@@ -15,3 +15,5 @@ Tableau Basics
 ## Key takeaway
 
 ## Tomorrow
+
+Bins and Calculated Fields

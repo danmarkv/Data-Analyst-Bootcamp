@@ -3,16 +3,22 @@
 <!-- build 20262.26.0912.1023                               -->
 <workbook _.fcp.WorkbookFingerprinting.true...author-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' _.fcp.WorkbookFingerprinting.true...creator-author-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' _.fcp.WorkbookFingerprinting.true...creator-license-type='public' _.fcp.WorkbookFingerprinting.true...creator-machine-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' _.fcp.WorkbookFingerprinting.true...license-type='public' _.fcp.WorkbookFingerprinting.true...machine-id='8bc5424b9b47d1c26d1d55c64f3b12825da28f3152daac31fbac36dfb7fba9e3' original-version='18.1' source-build='2026.2.3 (20262.26.0912.1023)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
   <document-format-change-manifest>
+    <AccessibleZoneTabOrder />
     <AnimationOnByDefault />
+    <AutoCreateAndUpdateDSDPhoneLayouts />
+    <IntuitiveSorting />
+    <IntuitiveSorting_SP2 />
     <MarkAnimation />
     <ObjectModelEncapsulateLegacy />
     <ObjectModelExtractV2 />
     <ObjectModelTableType />
     <SchemaViewerObjectModel />
+    <SetMembershipControl />
     <SheetIdentifierTracking />
     <VConnDownstreamExtractsWithWarnings />
     <WindowsPersistSimpleIdentifiers />
     <_.fcp.WorkbookFingerprinting.true...WorkbookFingerprinting />
+    <ZoneBackgroundTransparency />
   </document-format-change-manifest>
   <preferences>
     <preference name='ui.encoding.shelf.height' value='24' />
@@ -205,12 +211,20 @@
         </metadata-records>
       </connection>
       <aliases enabled='yes' />
+      <column caption='Percentage of Global Sales' datatype='real' default-format='p0.00%' name='[Calculation1]' role='measure' type='quantitative'>
+        <calculation class='tableau' formula='SUM([Global_Sales]) / TOTAL(SUM([Global_Sales]))'>
+          <table-calc ordering-type='Rows' />
+        </calculation>
+      </column>
       <column caption='EU Sales' datatype='real' name='[EU_Sales]' role='measure' type='quantitative' />
       <column datatype='string' name='[Genre]' role='dimension' type='nominal' />
       <column caption='Global Sales' datatype='real' name='[Global_Sales]' role='measure' type='quantitative' />
       <column caption='JP Sales' datatype='real' name='[JP_Sales]' role='measure' type='quantitative' />
       <column caption='NA Sales' datatype='real' name='[NA_Sales]' role='measure' type='quantitative' />
       <column caption='Other Sales' datatype='real' name='[Other_Sales]' role='measure' type='quantitative' />
+      <column caption='Year (bin!)' datatype='integer' name='[Year (bin)]' role='dimension' type='ordinal'>
+        <calculation class='bin' decimals='0' formula='[Year]' peg='0' size='5' />
+      </column>
       <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
       <column caption='vgsales_1.csv' datatype='table' name='[__tableau_internal_object_id__].[vgsales_1.csv_020ED1E659DF41638CF70C137C9A0CF8]' role='measure' type='quantitative' />
       <column-instance column='[Genre]' derivation='None' name='[none:Genre:nk]' pivot='key' type='nominal' />
@@ -464,10 +478,13 @@
             <column datatype='string' name='[Genre]' role='dimension' type='nominal' />
             <column caption='Global Sales' datatype='real' name='[Global_Sales]' role='measure' type='quantitative' />
             <column datatype='string' name='[Platform]' role='dimension' type='nominal' />
+            <column caption='Year (bin!)' datatype='integer' name='[Year (bin)]' role='dimension' type='ordinal'>
+              <calculation class='bin' decimals='0' formula='[Year]' peg='0' size='5' />
+            </column>
             <column datatype='integer' name='[Year]' role='dimension' type='quantitative' />
             <column-instance column='[Genre]' derivation='None' name='[none:Genre:nk]' pivot='key' type='nominal' />
             <column-instance column='[Platform]' derivation='None' name='[none:Platform:nk]' pivot='key' type='nominal' />
-            <column-instance column='[Year]' derivation='None' name='[none:Year:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Year (bin)]' derivation='None' name='[none:Year (bin):ok]' pivot='key' type='ordinal' />
             <column-instance column='[Global_Sales]' derivation='Sum' name='[sum:Global_Sales:qk]' pivot='key' type='quantitative' />
           </datasource-dependencies>
           <filter class='categorical' column='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Platform:nk]'>
@@ -478,14 +495,21 @@
               <groupfilter function='member' level='[none:Platform:nk]' member='&quot;PS4&quot;' />
             </groupfilter>
           </filter>
+          <filter class='categorical' column='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Year (bin):ok]'>
+            <groupfilter function='except' user:ui-domain='relevant' user:ui-enumeration='exclusive' user:ui-marker='enumerate'>
+              <groupfilter function='level-members' level='[none:Year (bin):ok]' />
+              <groupfilter function='member' level='[none:Year (bin):ok]' member='%null%' />
+            </groupfilter>
+          </filter>
           <slices>
             <column>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Platform:nk]</column>
+            <column>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Year (bin):ok]</column>
           </slices>
           <aggregation value='true' />
         </view>
         <style />
         <panes>
-          <pane selection-relaxation-option='selection-relaxation-allow'>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow'>
             <view>
               <breakdown value='auto' />
             </view>
@@ -510,14 +534,28 @@
           </pane>
         </panes>
         <rows>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[sum:Global_Sales:qk]</rows>
-        <cols>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Year:qk]</cols>
+        <cols>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Year (bin):ok]</cols>
+        <show-full-range>
+          <column>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[Year (bin)]</column>
+        </show-full-range>
       </table>
       <simple-id uuid='{C75078DD-A9AA-437C-894C-1FD357A28BDC}' />
     </worksheet>
     <worksheet name='Sheet 2'>
       <table>
         <view>
-          <datasources />
+          <datasources>
+            <datasource caption='vgsales_1' name='federated.1nhzwh20hlv60813c8kvl1rvaxt9' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1nhzwh20hlv60813c8kvl1rvaxt9'>
+            <column datatype='string' name='[Genre]' role='dimension' type='nominal' />
+            <column caption='Global Sales' datatype='real' name='[Global_Sales]' role='measure' type='quantitative' />
+            <column-instance column='[Genre]' derivation='None' name='[none:Genre:nk]' pivot='key' type='nominal' />
+            <column-instance column='[Global_Sales]' derivation='Sum' name='[sum:Global_Sales:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <shelf-sorts>
+            <shelf-sort-v2 dimension-to-sort='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' direction='DESC' is-on-innermost-dimension='true' measure-to-sort-by='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[sum:Global_Sales:qk]' shelf='columns' />
+          </shelf-sorts>
           <aggregation value='true' />
         </view>
         <style />
@@ -527,16 +565,97 @@
               <breakdown value='auto' />
             </view>
             <mark class='Automatic' />
+            <encodings>
+              <color column='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' />
+            </encodings>
           </pane>
         </panes>
-        <rows />
-        <cols />
+        <rows>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[sum:Global_Sales:qk]</rows>
+        <cols>[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]</cols>
       </table>
       <simple-id uuid='{3AF92D5D-108C-475E-B96C-A4E812E12A8D}' />
     </worksheet>
   </worksheets>
+  <dashboards>
+    <dashboard enable-sort-zone-taborder='true' name='Dashboard 1'>
+      <style />
+      <size sizing-mode='automatic' />
+      <datasources>
+        <datasource caption='vgsales_1' name='federated.1nhzwh20hlv60813c8kvl1rvaxt9' />
+      </datasources>
+      <datasource-dependencies datasource='federated.1nhzwh20hlv60813c8kvl1rvaxt9'>
+        <column datatype='string' name='[Platform]' role='dimension' type='nominal' />
+        <column-instance column='[Platform]' derivation='None' name='[none:Platform:nk]' pivot='key' type='nominal' />
+      </datasource-dependencies>
+      <zones>
+        <zone h='100000' id='4' type-v2='layout-basic' w='100000' x='0' y='0'>
+          <zone h='98214' id='7' param='horz' type-v2='layout-flow' w='99064' x='468' y='893'>
+            <zone h='98214' id='5' type-v2='layout-basic' w='89702' x='468' y='893'>
+              <zone h='43639' id='3' name='Sheet 1' w='89702' x='468' y='55468'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='54575' id='10' name='Sheet 2' w='89702' x='468' y='893'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+            <zone fixed-size='160' h='98214' id='6' is-fixed='true' param='vert' type-v2='layout-flow' w='9362' x='90170' y='893'>
+              <zone h='68526' id='8' name='Sheet 1' param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Platform:nk]' type-v2='filter' w='9362' x='90170' y='893'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+              <zone h='29688' id='9' name='Sheet 1' pane-specification-id='0' param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' type-v2='color' w='9362' x='90170' y='69419'>
+                <zone-style>
+                  <format attr='border-color' value='#000000' />
+                  <format attr='border-style' value='none' />
+                  <format attr='border-width' value='0' />
+                  <format attr='margin' value='4' />
+                </zone-style>
+              </zone>
+            </zone>
+          </zone>
+          <zone-style>
+            <format attr='border-color' value='#000000' />
+            <format attr='border-style' value='none' />
+            <format attr='border-width' value='0' />
+            <format attr='margin' value='8' />
+          </zone-style>
+        </zone>
+      </zones>
+      <devicelayouts>
+        <devicelayout auto-generated='true' name='Phone'>
+          <size maxheight='700' minheight='700' sizing-mode='vscroll' />
+          <zones>
+            <zone h='100000' id='2' type-v2='layout-basic' w='100000' x='0' y='0'>
+              <zone h='84000' id='1' param='vert' type-v2='layout-flow' w='84000' x='8000' y='8000' />
+              <zone-style>
+                <format attr='border-color' value='#000000' />
+                <format attr='border-style' value='none' />
+                <format attr='border-width' value='0' />
+                <format attr='margin' value='8' />
+              </zone-style>
+            </zone>
+          </zones>
+        </devicelayout>
+      </devicelayouts>
+      <simple-id uuid='{8AE723B3-85EE-4487-AA67-976BD61CD767}' />
+    </dashboard>
+  </dashboards>
   <windows source-height='30'>
-    <window class='worksheet' name='Sheet 1'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -557,13 +676,13 @@
           <strip size='160'>
             <card param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Platform:nk]' type='filter' />
             <card type='title' />
-            <card pane-specification-id='0' param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' type='color' />
+            <card pane-specification-id='2' param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' type='color' />
           </strip>
         </edge>
       </cards>
       <simple-id uuid='{130F7952-481C-48C7-9081-6A54322B92ED}' />
     </window>
-    <window class='worksheet' maximized='true' name='Sheet 2'>
+    <window class='worksheet' name='Sheet 2'>
       <cards>
         <edge name='left'>
           <strip size='160'>
@@ -573,18 +692,35 @@
           </strip>
         </edge>
         <edge name='top'>
-          <strip size='31'>
+          <strip size='2147483647'>
             <card type='columns' />
           </strip>
-          <strip size='31'>
+          <strip size='2147483647'>
             <card type='rows' />
           </strip>
           <strip size='31'>
             <card type='title' />
           </strip>
         </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1nhzwh20hlv60813c8kvl1rvaxt9].[none:Genre:nk]' type='color' />
+          </strip>
+        </edge>
       </cards>
       <simple-id uuid='{2A4837D4-B237-47B8-89F7-9D570B96777D}' />
+    </window>
+    <window class='dashboard' name='Dashboard 1'>
+      <viewpoints>
+        <viewpoint name='Sheet 1'>
+          <zoom type='entire-view' />
+        </viewpoint>
+        <viewpoint name='Sheet 2'>
+          <zoom type='entire-view' />
+        </viewpoint>
+      </viewpoints>
+      <active id='-1' />
+      <simple-id uuid='{F35A1B6D-88AD-4E38-837D-B55862D67C14}' />
     </window>
   </windows>
 </workbook>
