@@ -49,6 +49,7 @@ Following the **FREE Data Analyst Bootcamp** — SQL, Excel, Python, Power BI, G
 | 36  | Oct 3  | Tableau        | Visualizations                                      | [notes](notes/Day%2036.md) |
 | 37  | Oct 5  | Tableau        | Joins                                               | [notes](notes/Day%2037.md) |
 | 38  | Oct 6  | Tableau        | Tableau Project                                     | [notes](notes/Day%2038.md) |
+| 39  | Oct 7  | Power BI       | Power BI Basics                                     | [notes](notes/Day%2038.md) |
 
 ---
 
